@@ -6,7 +6,7 @@
 /*   By: genouf <genouf@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 14:21:40 by genouf            #+#    #+#             */
-/*   Updated: 2022/11/07 15:22:12 by genouf           ###   ########.fr       */
+/*   Updated: 2022/11/08 00:01:28 by genouf           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,10 @@ int	main(int argc, char **argv)
 	int			i;
 	int			j;
 	std::locale loc;
+	char		tmp;
 
 	if (argc == 1)
-	{
-		std::cout << "SHHHHH... I THINK THE STUDENTS ARE ASLEEP..." << std::endl;
-	}
+		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
 	else
 	{
 		i = 1;
@@ -32,12 +31,14 @@ int	main(int argc, char **argv)
 			j = 0;
 			while (argv[i][j])
 			{
-				std::cout << std::toupper(argv[i][j], loc);
+				tmp = std::toupper(argv[i][j], loc);
+				std::cout << tmp;
 				j++;
 			}
 			i++;
 		}
-		std::cout << std::endl;
+		if (tmp)
+			std::cout << std::endl;
 	}	
 	return (0);
 }
