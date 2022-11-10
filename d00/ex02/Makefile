@@ -1,8 +1,8 @@
-NAME = phonebook
+NAME = accounts
 
 OBJ_PATH = obj/
 
-SRC_NAME =	main.cpp		\
+SRC_NAME =	tests.cpp		\
 			Account.cpp		\
 
 OBJ_NAME = $(SRC_NAME:.cpp=.o)
