@@ -6,7 +6,7 @@
 /*   By: genouf <genouf@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 11:34:12 by genouf            #+#    #+#             */
-/*   Updated: 2022/11/09 12:23:38 by genouf           ###   ########.fr       */
+/*   Updated: 2022/11/10 10:02:55 by genouf           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,28 +86,68 @@ void	PhoneBook::_print_data(std::string str) const
 		std::cout << ".";
 }
 
-void	PhoneBook::_print_field(Contact contact) const
+void	PhoneBook::_print_field(Contact contact, int index) const
 {
+	std::cout << index << " | ";
 	_print_data(contact.getFirstName());
-	std::cout << "|";
+	std::cout << " | ";
 	_print_data(contact.getLastName());
-	std::cout << "|";
+	std::cout << " | ";
 	_print_data(contact.getNickname());
-	std::cout << "|";
-	_print_data(contact.getNumber());
-	std::cout << "|";
-	_print_data(contact.getSecret());
 	std::cout << std::endl;
 }
 
-void	PhoneBook::print_index(void) 
+void	PhoneBook::_print_all_field(Contact contact) const
 {
-	int	i;
-	
+	std::cout << std::endl << contact.getFirstName() << std::endl;
+	std::cout << contact.getLastName() << std::endl;
+	std::cout << contact.getNickname() << std::endl;
+	std::cout << contact.getNumber() << std::endl;
+	std::cout << contact.getSecret() << std::endl;
+}
+
+int	PhoneBook::_check_index(std::string input) const
+{
+	char	i;
+
 	i = 0;
 	while (i < this->_end_index)
 	{
-		_print_field(this->_content[i]);
+		if (i + 48 == (char)input[0])
+			return (i);
 		i++;
 	}
+	return (-1);
+}
+
+void	PhoneBook::search(void) const
+{
+	int			i;
+	int			ok;
+	std::string	input;
+
+	if (this->_end_index == 0)
+	{
+		std::cout << "The PhoneBook is empty !" << std::endl;
+		return ;
+	}
+	i = -1;
+	while (++i < this->_end_index)
+		_print_field(this->_content[i], i);
+	ok = 0;
+	while (!std::cin.eof() && ok == 0)
+	{
+		std::cout << std::endl << "Please enter the index of the contact you want to look at : ";
+		std::getline(std::cin, input);
+		if (_check_index(input) != -1)
+		{
+			ok = 1;
+			_print_all_field(this->_content[_check_index(input)]);
+			return ;
+		}
+		else
+			std::cout << "This is not a valid index !" << std::endl;
+	}
+	std::cout << "End of line detected !" << std::endl;
+	return ;
 }
