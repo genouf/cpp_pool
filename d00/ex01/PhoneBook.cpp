@@ -6,7 +6,7 @@
 /*   By: genouf <genouf@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 11:34:12 by genouf            #+#    #+#             */
-/*   Updated: 2022/11/10 10:02:55 by genouf           ###   ########.fr       */
+/*   Updated: 2022/11/11 08:51:35 by genouf           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,11 +99,11 @@ void	PhoneBook::_print_field(Contact contact, int index) const
 
 void	PhoneBook::_print_all_field(Contact contact) const
 {
-	std::cout << std::endl << contact.getFirstName() << std::endl;
-	std::cout << contact.getLastName() << std::endl;
-	std::cout << contact.getNickname() << std::endl;
-	std::cout << contact.getNumber() << std::endl;
-	std::cout << contact.getSecret() << std::endl;
+	std::cout << std::endl << "First Name : " << contact.getFirstName() << std::endl;
+	std::cout << "Last Name : " << contact.getLastName() << std::endl;
+	std::cout << "Nickname : " << contact.getNickname() << std::endl;
+	std::cout << "Number : " << contact.getNumber() << std::endl;
+	std::cout << "Secret : " << contact.getSecret() << std::endl;
 }
 
 int	PhoneBook::_check_index(std::string input) const
