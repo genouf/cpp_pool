@@ -1,9 +1,9 @@
-NAME = HarlFilter
+NAME = fixed_p
 
 OBJ_PATH = obj/
 
 SRC_NAME =	main.cpp		\
-			Harl.cpp			\
+			Fixed.cpp		\
 
 OBJ_NAME = $(SRC_NAME:.cpp=.o)
 
