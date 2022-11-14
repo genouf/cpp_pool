@@ -6,7 +6,7 @@
 /*   By: genouf <genouf@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/13 17:53:21 by genouf            #+#    #+#             */
-/*   Updated: 2022/11/13 22:30:52 by genouf           ###   ########.fr       */
+/*   Updated: 2022/11/14 09:21:21 by genouf           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,10 +58,13 @@ void	Harl::complain(std::string level) const
 	{
 		case 0 :
 			this->debug();
+			__attribute__((fallthrough));
 		case 1 :
 			this->info();
+			__attribute__((fallthrough));
 		case 2 :
 			this->warning();
+			__attribute__((fallthrough));
 		case 3 :	
 			this->error();
 			break;
