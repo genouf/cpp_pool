@@ -1,4 +1,4 @@
-NAME = fixed_p
+NAME = fixed
 
 OBJ_PATH = obj/
 
