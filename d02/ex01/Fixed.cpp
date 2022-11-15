@@ -6,7 +6,7 @@
 /*   By: genouf <genouf@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 09:51:58 by genouf            #+#    #+#             */
-/*   Updated: 2022/11/15 09:18:22 by genouf           ###   ########.fr       */
+/*   Updated: 2022/11/15 14:01:54 by genouf           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ Fixed::Fixed(void) : _nbr(0)
 
 Fixed::Fixed(const int nb) : _nbr(nb << 8)
 {
+	std::cout << "Int constructor called" << std::endl;
 	return ;
 }
 
@@ -30,6 +31,7 @@ Fixed::Fixed(const float nb)
 {
 	float tmp; 
 
+	std::cout << "Float constructor called" << std::endl;
 	tmp = nb * 256.0f;
 	tmp = roundf(tmp);
 	this->_nbr = tmp;
@@ -71,7 +73,6 @@ std::ostream &		operator<<(std::ostream & o, Fixed const & i)
 
 int	Fixed::getRawBits(void) const
 {
-	std::cout << "getRawBits member function called" << std::endl;
 	return _nbr;
 }
 
