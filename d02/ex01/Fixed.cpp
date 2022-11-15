@@ -6,7 +6,7 @@
 /*   By: genouf <genouf@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 09:51:58 by genouf            #+#    #+#             */
-/*   Updated: 2022/11/14 18:44:34 by genouf           ###   ########.fr       */
+/*   Updated: 2022/11/15 09:18:22 by genouf           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,11 +63,11 @@ Fixed &		Fixed::operator=(Fixed const & rhs)
 
 std::ostream &		operator<<(std::ostream & o, Fixed const & i)
 {
-	std::cout << "The value of nbr is : " << i.getRawBits() << std::endl;
+	std::cout << i.toFloat();
 	return o;
 }
 
-/*						FUNCTIONS						*/
+/*						ACCESSOR						*/
 
 int	Fixed::getRawBits(void) const
 {
@@ -79,6 +79,20 @@ void	Fixed::setRawBits(int const raw)
 {
 	this->_nbr = raw;
 	return ;
+}
+
+/*						FUNCTIONS						*/
+float	Fixed::toFloat(void) const
+{
+	float	result;
+
+	result = this->_nbr / 256.0f;
+	return (result);
+}
+
+int		Fixed::toInt(void) const
+{
+	return (this->_nbr >> 8);
 }
 
 /*						STATIC						*/

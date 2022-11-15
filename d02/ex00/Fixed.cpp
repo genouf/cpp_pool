@@ -6,7 +6,7 @@
 /*   By: genouf <genouf@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 09:51:58 by genouf            #+#    #+#             */
-/*   Updated: 2022/11/14 16:21:00 by genouf           ###   ########.fr       */
+/*   Updated: 2022/11/15 08:24:58 by genouf           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,12 +43,6 @@ Fixed &		Fixed::operator=(Fixed const & rhs)
 	if (this != &rhs)
 		this->_nbr = rhs.getRawBits();
 	return *this;
-}
-
-std::ostream &		operator<<(std::ostream & o, Fixed const & i)
-{
-	std::cout << "The value of nbr is : " << i.getRawBits() << std::endl;
-	return o;
 }
 
 /*						FUNCTIONS						*/
