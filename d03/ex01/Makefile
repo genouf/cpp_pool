@@ -1,9 +1,10 @@
-NAME = claptrap
+NAME = serena
 
 OBJ_PATH = obj/
 
 SRC_NAME =	main.cpp			\
 			Claptrap.cpp		\
+			ScavTrap.cpp 		\
 
 OBJ_NAME = $(SRC_NAME:.cpp=.o)
 

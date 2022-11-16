@@ -6,26 +6,27 @@
 /*   By: genouf <genouf@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 15:21:19 by genouf            #+#    #+#             */
-/*   Updated: 2022/11/16 10:05:25 by genouf           ###   ########.fr       */
+/*   Updated: 2022/11/16 10:45:59 by genouf           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Claptrap.hpp"
 
-Claptrap::Claptrap(void)
+Claptrap::Claptrap(void) : _name("anonyme"), _hit_points(100), _energy_points(50), _attack_dmg(20)
 {
-	return ;
-}
-
-Claptrap::Claptrap(Claptrap const & src)
-{
-	*this = src;
+	std::cout << "Claptrap " << _name << " has just been built !" << std::endl;
 	return ;
 }
 
 Claptrap::Claptrap(std::string name) : _name(name), _hit_points(10), _energy_points(10), _attack_dmg(0)
 {
 	std::cout << "Claptrap " << _name << " has just been built !" << std::endl;
+	return ;
+}
+
+Claptrap::Claptrap(Claptrap const & src)
+{
+	*this = src;
 	return ;
 }
 

@@ -6,7 +6,7 @@
 /*   By: genouf <genouf@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 15:21:17 by genouf            #+#    #+#             */
-/*   Updated: 2022/11/16 08:44:13 by genouf           ###   ########.fr       */
+/*   Updated: 2022/11/16 10:43:52 by genouf           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 class Claptrap {
 
 public :
+	Claptrap(void);
 	Claptrap(std::string name);
 	Claptrap(Claptrap const &src);
 	~Claptrap();
@@ -28,8 +29,7 @@ public :
 	void	takeDamage(unsigned int amount);
 	void	beRepaired(unsigned int amount);
 	
-private :
-	Claptrap(void);
+protected :
 	std::string	_name;
 	int			_hit_points;
 	int			_energy_points;

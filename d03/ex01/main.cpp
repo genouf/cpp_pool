@@ -6,19 +6,16 @@
 /*   By: genouf <genouf@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 15:21:13 by genouf            #+#    #+#             */
-/*   Updated: 2022/11/16 08:46:27 by genouf           ###   ########.fr       */
+/*   Updated: 2022/11/16 11:11:35 by genouf           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Claptrap.hpp"
+#include "ScavTrap.hpp"
 
 int	main(void)
 {
-	Claptrap	maurice("Maurice");
+	ScavTrap	gilbert("Gilbert");
 
-	maurice.attack("albert");
-	maurice.takeDamage(1);
-	maurice.beRepaired(1);
-	maurice.takeDamage(100);
+	gilbert.attack("Maurice");
 	return (0);
 }

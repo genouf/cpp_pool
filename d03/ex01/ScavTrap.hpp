@@ -1,24 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: genouf <genouf@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/15 15:21:13 by genouf            #+#    #+#             */
-/*   Updated: 2022/11/16 08:46:27 by genouf           ###   ########.fr       */
+/*   Created: 2022/11/16 09:15:52 by genouf            #+#    #+#             */
+/*   Updated: 2022/11/16 11:15:52 by genouf           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef SCAVTRAP_HPP
+# define SCAVTRAP_HPP
+
 #include "Claptrap.hpp"
 
-int	main(void)
-{
-	Claptrap	maurice("Maurice");
+class ScavTrap : public Claptrap {
 
-	maurice.attack("albert");
-	maurice.takeDamage(1);
-	maurice.beRepaired(1);
-	maurice.takeDamage(100);
-	return (0);
-}
+public:
+	ScavTrap(void);
+	ScavTrap(ScavTrap const &src);
+	ScavTrap(std::string name);
+	ScavTrap &	operator=(ScavTrap const & rhs);
+	~ScavTrap();
+
+	void	guardGate(void);
+private:
+
+};
+
+#endif
