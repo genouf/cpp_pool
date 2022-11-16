@@ -6,7 +6,7 @@
 /*   By: genouf <genouf@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 09:15:52 by genouf            #+#    #+#             */
-/*   Updated: 2022/11/16 19:33:48 by genouf           ###   ########.fr       */
+/*   Updated: 2022/11/16 19:36:51 by genouf           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 #include "Claptrap.hpp"
 
-class ScavTrap : public Claptrap {
+class ScavTrap : virtual public Claptrap {
 
 public:
 	ScavTrap(void);

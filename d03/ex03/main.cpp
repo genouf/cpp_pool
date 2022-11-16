@@ -1,33 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: genouf <genouf@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/16 09:15:52 by genouf            #+#    #+#             */
-/*   Updated: 2022/11/16 19:33:48 by genouf           ###   ########.fr       */
+/*   Created: 2022/11/15 15:21:13 by genouf            #+#    #+#             */
+/*   Updated: 2022/11/16 19:29:19 by genouf           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAVTRAP_HPP
-# define SCAVTRAP_HPP
+#include "DiamondTrap.hpp"
 
-#include "Claptrap.hpp"
+int	main(void)
+{
+	DiamondTrapp	rihanna("Rihanna");
 
-class ScavTrap : public Claptrap {
-
-public:
-	ScavTrap(void);
-	ScavTrap(ScavTrap const &src);
-	ScavTrap(std::string name);
-	ScavTrap &	operator=(ScavTrap const & rhs);
-	~ScavTrap();
-
-	void	attack(const std::string &target);
-	void	guardGate(void);
-private:
-
-};
-
-#endif
+	rihanna.whoAmI();
+	rihanna.attack("Chris");
+	rihanna.takeDamage(10);
+	return (0);
+}
