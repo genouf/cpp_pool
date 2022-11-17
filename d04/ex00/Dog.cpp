@@ -1,34 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: genouf <genouf@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/16 23:26:37 by genouf            #+#    #+#             */
-/*   Updated: 2022/11/17 15:13:41 by genouf           ###   ########.fr       */
+/*   Created: 2022/11/17 09:27:48 by genouf            #+#    #+#             */
+/*   Updated: 2022/11/17 15:25:23 by genouf           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-# define ANIMAL_HPP
+#include "Dog.hpp"
 
-#include <iostream>
+Dog::Dog(void) : Animal(), _type("Dog")
+{
+	return ;
+}
 
-class Animal {
+Dog::Dog(Dog const &src) : Animal()
+{
+	*this = src;
+	return ;
+}
 
-public:
-	Animal(void);
-	Animal(Animal const &src);
-	Animal & operator=(Animal const & rhs);
-	virtual ~Animal();
+Dog::~Dog()
+{
+	return ;
+}
 
-	virtual	void	makeSound(void) const;
-	std::string		getType(void) const;
-	
-protected:
-	std::string	_type;
+/*						OPERATOR						*/
+Dog &	Dog::operator=(Dog const & rhs)
+{
+	this->_type = rhs._type;
+	return *this;
+}
 
-};
-
-#endif
+/*						FUNCTIONS						*/
+void	Dog::makeSound(void) const
+{
+	std::cout << "wouaf wouhhhhhh wouaf wouaf !!" << std::endl;
+	return ;
+}

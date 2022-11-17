@@ -6,7 +6,7 @@
 /*   By: genouf <genouf@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 23:26:41 by genouf            #+#    #+#             */
-/*   Updated: 2022/11/16 23:40:05 by genouf           ###   ########.fr       */
+/*   Updated: 2022/11/17 15:15:01 by genouf           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,13 +31,20 @@ Animal::~Animal()
 /*						OPERATOR						*/
 Animal &	Animal::operator=(Animal const & rhs)
 {
-	this->_type = rhs._type;
-	return ;
+	if (this != &rhs)
+		this->_type = rhs._type;
+	return *this;
 }
 
 /*						FUNCTIONS						*/
-void	Animal::makeSound(void)
+void	Animal::makeSound(void) const
 {
 	std::cout << "  ...  " << std::endl;
 	return ;
+}
+
+/*						ACCESSORS						*/
+std::string	Animal::getType(void) const
+{
+	return this->_type;
 }

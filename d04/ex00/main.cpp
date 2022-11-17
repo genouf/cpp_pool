@@ -6,11 +6,13 @@
 /*   By: genouf <genouf@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 22:08:39 by genouf            #+#    #+#             */
-/*   Updated: 2022/11/16 23:42:02 by genouf           ###   ########.fr       */
+/*   Updated: 2022/11/17 15:12:46 by genouf           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
+#include "Cat.hpp"
+#include "Dog.hpp"
 
 int	main(void)
 {

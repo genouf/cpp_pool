@@ -1,10 +1,11 @@
-NAME = diamond
+NAME = animals
 
 OBJ_PATH = obj/
 
 SRC_NAME =	main.cpp			\
 			Animal.cpp			\
-
+			Dog.cpp				\
+			Cat.cpp				\
 
 OBJ_NAME = $(SRC_NAME:.cpp=.o)
 

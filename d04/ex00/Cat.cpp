@@ -1,34 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: genouf <genouf@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/16 23:26:37 by genouf            #+#    #+#             */
-/*   Updated: 2022/11/17 15:13:41 by genouf           ###   ########.fr       */
+/*   Created: 2022/11/17 13:51:08 by genouf            #+#    #+#             */
+/*   Updated: 2022/11/17 15:25:36 by genouf           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-# define ANIMAL_HPP
+#include "Cat.hpp"
 
-#include <iostream>
+Cat::Cat(void) : Animal(), _type("Cat")
+{
+	return ;
+}
 
-class Animal {
+Cat::Cat(Cat const &src) : Animal()
+{
+	*this = src;
+	return ;
+}
 
-public:
-	Animal(void);
-	Animal(Animal const &src);
-	Animal & operator=(Animal const & rhs);
-	virtual ~Animal();
+Cat::~Cat()
+{
+	return ;
+}
 
-	virtual	void	makeSound(void) const;
-	std::string		getType(void) const;
-	
-protected:
-	std::string	_type;
+/*						OPERATOR						*/
+Cat &	Cat::operator=(Cat const & rhs)
+{
+	this->_type = rhs._type;
+	return *this;
+}
 
-};
-
-#endif
+/*						FUNCTIONS						*/
+void	Cat::makeSound(void) const
+{
+	std::cout << "miaou miaouuuuuuu miaou miaouuu !!" << std::endl;
+	return ;
+}
