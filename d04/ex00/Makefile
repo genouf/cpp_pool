@@ -6,6 +6,8 @@ SRC_NAME =	main.cpp			\
 			Animal.cpp			\
 			Dog.cpp				\
 			Cat.cpp				\
+			WrongAnimal.cpp 	\
+			WrongCat.cpp		\
 
 OBJ_NAME = $(SRC_NAME:.cpp=.o)
 

@@ -6,7 +6,7 @@
 /*   By: genouf <genouf@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 23:26:41 by genouf            #+#    #+#             */
-/*   Updated: 2022/11/17 15:15:01 by genouf           ###   ########.fr       */
+/*   Updated: 2022/11/18 08:35:34 by genouf           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 Animal::Animal(void) : _type("Animal")
 {
+	std::cout << "Animal constructor called" << std::endl;
 	return ;
 }
 
@@ -25,6 +26,7 @@ Animal::Animal(Animal const &src)
 
 Animal::~Animal()
 {
+	std::cout << "Animal destructor called" << std::endl;
 	return ;
 }
 
@@ -43,7 +45,7 @@ void	Animal::makeSound(void) const
 	return ;
 }
 
-/*						ACCESSORS						*/
+/*						OPERATOR						*/
 std::string	Animal::getType(void) const
 {
 	return this->_type;

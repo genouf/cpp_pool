@@ -1,38 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.cpp                                            :+:      :+:    :+:   */
+/*   WrongAnimal.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: genouf <genouf@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/17 09:27:48 by genouf            #+#    #+#             */
-/*   Updated: 2022/11/18 08:36:39 by genouf           ###   ########.fr       */
+/*   Created: 2022/11/18 09:03:16 by genouf            #+#    #+#             */
+/*   Updated: 2022/11/18 09:06:29 by genouf           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.hpp"
+#include "WrongAnimal.hpp"
 
-Dog::Dog(void) : Animal()
+WrongAnimal::WrongAnimal(void) : _type("WrongAnimal")
 {
-	std::cout << "Dog constructor called" << std::endl;
-	_type = "Dog";
+	std::cout << "WrongAnimal constructor called" << std::endl;
 	return ;
 }
 
-Dog::Dog(Dog const &src) : Animal()
+WrongAnimal::WrongAnimal(WrongAnimal const &src)
 {
 	*this = src;
 	return ;
 }
 
-Dog::~Dog()
+WrongAnimal::~WrongAnimal()
 {
-	std::cout << "Dog destructor called" << std::endl;
+	std::cout << "WrongAnimal destructor called" << std::endl;
 	return ;
 }
 
 /*						OPERATOR						*/
-Dog &	Dog::operator=(Dog const & rhs)
+WrongAnimal &	WrongAnimal::operator=(WrongAnimal const & rhs)
 {
 	if (this != &rhs)
 		this->_type = rhs._type;
@@ -40,8 +39,14 @@ Dog &	Dog::operator=(Dog const & rhs)
 }
 
 /*						FUNCTIONS						*/
-void	Dog::makeSound(void) const
+void	WrongAnimal::makeSound(void) const
 {
-	std::cout << "wouaf wouhhhhhh wouaf wouaf !!" << std::endl;
+	std::cout << "  ...  " << std::endl;
 	return ;
+}
+
+/*						OPERATOR						*/
+std::string	WrongAnimal::getType(void) const
+{
+	return this->_type;
 }
