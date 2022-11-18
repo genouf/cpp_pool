@@ -4,11 +4,10 @@ SRC_PATH = src/
 OBJ_PATH = obj/
 
 SRC_NAME =	main.cpp			\
-			Animal.cpp			\
+			AAnimal.cpp			\
 			Dog.cpp				\
 			Cat.cpp				\
-			WrongAnimal.cpp 	\
-			WrongCat.cpp		\
+			Brain.cpp			\
 
 OBJ_NAME = $(SRC_NAME:.cpp=.o)
 
