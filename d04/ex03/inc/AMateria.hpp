@@ -6,13 +6,15 @@
 /*   By: genouf <genouf@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 18:33:54 by genouf            #+#    #+#             */
-/*   Updated: 2022/11/19 19:18:42 by genouf           ###   ########.fr       */
+/*   Updated: 2022/11/20 16:53:28 by genouf           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
 #include <iostream>
+
+class ICharacter;
 #include "ICharacter.hpp"
 
 class AMateria {

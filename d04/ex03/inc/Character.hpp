@@ -6,7 +6,7 @@
 /*   By: genouf <genouf@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/19 19:02:12 by genouf            #+#    #+#             */
-/*   Updated: 2022/11/20 15:18:01 by genouf           ###   ########.fr       */
+/*   Updated: 2022/11/20 16:56:52 by genouf           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ public:
 	Character & operator=(Character const &rhs);
 	virtual ~Character();
 
-	virtual std::string const & getName() const;
+	virtual std::string const & getName(void) const;
 	virtual void equip(AMateria* m);
 	virtual void unequip(int idx);
 	virtual void use(int idx, ICharacter& target);

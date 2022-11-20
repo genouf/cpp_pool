@@ -1,13 +1,14 @@
-NAME = animals
+NAME = materia
 
 SRC_PATH = src/
 OBJ_PATH = obj/
 
-SRC_NAME =	main.cpp			\
-			AAnimal.cpp			\
-			Dog.cpp				\
-			Cat.cpp				\
-			Brain.cpp			\
+SRC_NAME =	main.cpp				\
+			AMateria.cpp			\
+			Character.cpp			\
+			Cure.cpp				\
+			Ice.cpp					\
+			MateriaSource.cpp		\
 
 OBJ_NAME = $(SRC_NAME:.cpp=.o)
 

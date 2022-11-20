@@ -6,7 +6,7 @@
 /*   By: genouf <genouf@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/19 12:51:41 by genouf            #+#    #+#             */
-/*   Updated: 2022/11/20 11:37:28 by genouf           ###   ########.fr       */
+/*   Updated: 2022/11/20 16:54:35 by genouf           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ Cure::~Cure(void)
 /*						OPERATOR						*/
 Cure &Cure::operator=(Cure const &rhs)
 {
+	(void)rhs;
 	return *this;
 }
 

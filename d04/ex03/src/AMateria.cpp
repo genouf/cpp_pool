@@ -6,7 +6,7 @@
 /*   By: genouf <genouf@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/19 10:21:56 by genouf            #+#    #+#             */
-/*   Updated: 2022/11/20 11:37:20 by genouf           ###   ########.fr       */
+/*   Updated: 2022/11/20 16:54:21 by genouf           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ AMateria::~AMateria(void)
 
 AMateria &AMateria::operator=(AMateria const &rhs)
 {
+	(void)rhs;
 	return *this;
 }
 
@@ -49,5 +50,6 @@ std::string const & AMateria::getType() const
 
 void	AMateria::use(ICharacter &target)
 {
+	(void)target;
 	return ;
 }

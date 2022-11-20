@@ -6,7 +6,7 @@
 /*   By: genouf <genouf@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/19 19:02:15 by genouf            #+#    #+#             */
-/*   Updated: 2022/11/20 15:32:57 by genouf           ###   ########.fr       */
+/*   Updated: 2022/11/20 17:14:25 by genouf           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,9 +40,9 @@ Character::Character(Character const &src)
 	for (int i = 0; i < 4; i++)
 	{
 		if (src._inventory[i] != NULL)
-		_inventory[i] = src._inventory[i]->clone();
+			_inventory[i] = src._inventory[i]->clone();
 		else
-		_inventory[i] = NULL;
+			_inventory[i] = NULL;
 	}
 	return ;
 }
@@ -93,11 +93,12 @@ void	Character::equip(AMateria* m)
 		}
 	}
 	std::cout << "Inventory full !" << std::endl;
+	delete m;
 }
 
 void	Character::unequip(int idx)
 {
-	if ((idx > -1 && idx < 4) || _inventory[idx] == NULL)
+	if ((idx > -1 && idx < 4) && _inventory[idx] == NULL)
 		std::cout << "Wrong item !" << std::endl;
 	else
 	{
@@ -111,7 +112,7 @@ void	Character::use(int idx, ICharacter& target)
 	if (idx > -1 && idx < 4 && _inventory[idx] != NULL)
 		_inventory[idx]->use(target);
 	else
-		std::cout << "Wrong item !" << std::endl;
+		std::cout << "I don't have this item !" << std::endl;
 }
 
 void	Character::use_trash(AMateria *m)
@@ -125,4 +126,10 @@ void	Character::use_trash(AMateria *m)
 	delete [] _trash;
 	_trash = new_trash;
 	_trash[_trash_size - 1] = m;
+}
+
+/*							ACCESSOR						*/
+std::string	const &Character::getName(void) const
+{
+	return (_name);
 }
