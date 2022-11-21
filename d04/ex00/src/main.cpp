@@ -6,7 +6,7 @@
 /*   By: genouf <genouf@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 22:08:39 by genouf            #+#    #+#             */
-/*   Updated: 2022/11/18 09:13:12 by genouf           ###   ########.fr       */
+/*   Updated: 2022/11/21 08:50:01 by genouf           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,5 +35,6 @@ int	main(void)
 	delete meta;
 	delete j;
 	delete i;
+	delete i_false;
 	return (0);	
 }
