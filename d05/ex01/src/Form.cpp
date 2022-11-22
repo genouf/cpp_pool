@@ -6,7 +6,7 @@
 /*   By: genouf <genouf@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 18:10:59 by genouf            #+#    #+#             */
-/*   Updated: 2022/11/21 22:37:56 by genouf           ###   ########.fr       */
+/*   Updated: 2022/11/22 09:42:42 by genouf           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,17 +48,17 @@ Form &	Form::operator=(Form const & rhs)
 
 std::ostream &		operator<<(std::ostream & o, Form const & i)
 {
-	std::cout << "====== " << i.getName() << " FORM =======" << std::endl;
+	std::cout << std::endl << "====== " << i.getName() << " FORM =======" << std::endl;
 	std::cout << "Signed : " << i.getSigned() << std::endl;
 	std::cout << "Grade to sign it : " << i.getGradeSign() << std::endl;
-	std::cout << "Grade to exec it : " << i.getGradeExec() << std::endl;
+	std::cout << "Grade to exec it : " << i.getGradeExec() << std::endl << std::endl;
 	return o;
 }
 
 /*						FUNCTIONS						*/
 void	Form::beSigned(Bureaucrat const &b)
 {
-	if (b.getGrade() > this->getGradeSign())
+	if (b.getGrade() > this->_g_sign)
 		throw Form::GradeTooLowException();
 	else if (this->_signed == 1)
 		throw Form::AlreadySigned();
