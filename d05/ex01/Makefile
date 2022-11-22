@@ -1,4 +1,4 @@
-NAME = bureaucrat
+NAME = form
 
 SRC_PATH = src/
 OBJ_PATH = obj/

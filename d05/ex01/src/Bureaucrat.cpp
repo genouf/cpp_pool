@@ -6,11 +6,12 @@
 /*   By: genouf <genouf@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 11:52:41 by genouf            #+#    #+#             */
-/*   Updated: 2022/11/21 17:38:12 by genouf           ###   ########.fr       */
+/*   Updated: 2022/11/21 22:37:22 by genouf           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 Bureaucrat::Bureaucrat(void) : _name("anonyme"), _grade(150) { return ; }
 
@@ -20,7 +21,7 @@ Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name), _grade(grade)
 		throw Bureaucrat::GradeTooHighException();
 	else if (grade < 1)
 		throw Bureaucrat::GradeTooLowException();
-	std::cout << "Bureaucrat " << this->getName() << " constructed !" << std::endl;
+	std::cout << "Bureaucrat " << this->_name << " constructed !" << std::endl;
 	return ;
 }
 
@@ -32,7 +33,7 @@ Bureaucrat::Bureaucrat(Bureaucrat const &src)
 
 Bureaucrat::~Bureaucrat(void)
 {
-	std::cout << "Bureaucrat " << this->getName() << " destructed !" << std::endl;
+	std::cout << "Bureaucrat " << this->_name << " destructed !" << std::endl;
 	return ; 
 }
 
@@ -57,6 +58,19 @@ void	Bureaucrat::downGrade(void)
 	if (this->_grade + 1 > 150)
 		throw Bureaucrat::GradeTooLowException();
 	this->_grade++;
+}
+
+void	Bureaucrat::signForm(Form &f)
+{
+	try
+	{
+		f.beSigned(*this);
+	}
+	catch (std::exception const &e)
+	{
+		std::cout << "Bureaucrat " << this->getName() << " couldn't sign Form " << f.getName() << " because " << e.what() << std::endl;
+	}
+	std::cout << "Bureaucrat " << this->getName() << " signed Form" << f.getName() << std::endl;
 }
 
 /*						ACCESSORS						*/

@@ -6,7 +6,7 @@
 /*   By: genouf <genouf@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 11:52:41 by genouf            #+#    #+#             */
-/*   Updated: 2022/11/21 17:38:12 by genouf           ###   ########.fr       */
+/*   Updated: 2022/11/21 21:53:17 by genouf           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name), _grade(grade)
 		throw Bureaucrat::GradeTooHighException();
 	else if (grade < 1)
 		throw Bureaucrat::GradeTooLowException();
-	std::cout << "Bureaucrat " << this->getName() << " constructed !" << std::endl;
+	std::cout << "Bureaucrat " << this->_name << " constructed !" << std::endl;
 	return ;
 }
 
@@ -32,7 +32,7 @@ Bureaucrat::Bureaucrat(Bureaucrat const &src)
 
 Bureaucrat::~Bureaucrat(void)
 {
-	std::cout << "Bureaucrat " << this->getName() << " destructed !" << std::endl;
+	std::cout << "Bureaucrat " << this->_name << " destructed !" << std::endl;
 	return ; 
 }
 

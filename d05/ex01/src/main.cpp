@@ -6,12 +6,13 @@
 /*   By: genouf <genouf@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 11:52:47 by genouf            #+#    #+#             */
-/*   Updated: 2022/11/21 18:38:17 by genouf           ###   ########.fr       */
+/*   Updated: 2022/11/21 22:14:16 by genouf           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 int	main(void)
 {

@@ -6,13 +6,16 @@
 /*   By: genouf <genouf@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 11:52:44 by genouf            #+#    #+#             */
-/*   Updated: 2022/11/21 17:14:38 by genouf           ###   ########.fr       */
+/*   Updated: 2022/11/21 22:42:43 by genouf           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
 #include <iostream>
+
+#include "Form.hpp"
+class Form;
 
 class Bureaucrat
 {
@@ -24,6 +27,7 @@ class Bureaucrat
 		
 		void	upGrade(void);
 		void	downGrade(void);
+		void	signForm(Form &f);
 
 		std::string	getName(void) const;
 		int			getGrade(void) const;
