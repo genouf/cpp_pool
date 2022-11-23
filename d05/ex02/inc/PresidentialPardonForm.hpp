@@ -6,14 +6,13 @@
 /*   By: genouf <genouf@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 10:16:32 by genouf            #+#    #+#             */
-/*   Updated: 2022/11/22 13:46:20 by genouf           ###   ########.fr       */
+/*   Updated: 2022/11/22 17:01:19 by genouf           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
 #include <iostream>
-#include <fstream>
 #include "Form.hpp"
 
 class PresidentialPardonForm : public Form

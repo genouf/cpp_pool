@@ -6,7 +6,7 @@
 /*   By: genouf <genouf@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 11:52:44 by genouf            #+#    #+#             */
-/*   Updated: 2022/11/21 22:42:43 by genouf           ###   ########.fr       */
+/*   Updated: 2022/11/23 15:15:16 by genouf           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ class Bureaucrat
 		void	upGrade(void);
 		void	downGrade(void);
 		void	signForm(Form &f);
+		void	executeForm(Form const & form);
 
 		std::string	getName(void) const;
 		int			getGrade(void) const;

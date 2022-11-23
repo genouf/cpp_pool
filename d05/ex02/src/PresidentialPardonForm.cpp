@@ -6,7 +6,7 @@
 /*   By: genouf <genouf@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 10:16:45 by genouf            #+#    #+#             */
-/*   Updated: 2022/11/22 13:51:07 by genouf           ###   ########.fr       */
+/*   Updated: 2022/11/23 15:34:40 by genouf           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,15 +38,8 @@ PresidentialPardonForm & PresidentialPardonForm::operator=(PresidentialPardonFor
 /*						FUNCTIONS						*/
 void			PresidentialPardonForm::execute(Bureaucrat const & executor) const
 {
-	try
-	{
 		this->check_exec(executor);
 		std::cout << this->_target << " has been pardoned by Zaphod Beeblebrox !" << std::endl;
-	}
-	catch(const std::exception& e)
-	{
-		std::cerr << e.what() << std::endl;
-	}
 }
 
 /*						OPERATORS						*/
