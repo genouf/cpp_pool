@@ -6,12 +6,42 @@
 /*   By: genouf <genouf@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 14:29:08 by genouf            #+#    #+#             */
-/*   Updated: 2022/11/24 17:13:09 by genouf           ###   ########.fr       */
+/*   Updated: 2022/11/24 17:33:40 by genouf           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iomanip>
 #include "main.hpp"
+
+void	hardcode_value(char *str)
+{
+	std::string str_s(str);
+	
+	if (str_s == "-inff" || str_s == "-inf")
+	{
+		std::cout << "char: impossible" << std::endl;
+		std::cout << "int: impossible" << std::endl;
+		std::cout << "float: -inff" << std::endl;
+		std::cout << "double: -inf" << std::endl;
+		exit(EXIT_SUCCESS);
+	}
+	else if (str_s == "+inff" || str_s == "+inf")
+	{
+		std::cout << "char: impossible" << std::endl;
+		std::cout << "int: impossible" << std::endl;
+		std::cout << "float: +inff" << std::endl;
+		std::cout << "double: +inf" << std::endl;
+		exit(EXIT_SUCCESS);
+	}
+	else if (str_s == "nanf" || str_s == "nan")
+	{
+		std::cout << "char: impossible" << std::endl;
+		std::cout << "int: impossible" << std::endl;
+		std::cout << "float: nanf" << std::endl;
+		std::cout << "double: nan" << std::endl;
+		exit(EXIT_SUCCESS);
+	}
+}
 
 void	convert_char(char *str)
 {
@@ -57,6 +87,7 @@ void	convert_float(char *str)
 {
 	double	tmp;
 	
+	hardcode_value(str);
 	tmp = strtod(str, NULL);
 	if (tmp < std::numeric_limits<float>::min() || tmp > std::numeric_limits<float>::max())
 	{
@@ -84,13 +115,14 @@ void	convert_double(char *str)
 {
 	long double	tmp;
 
+	hardcode_value(str);
 	tmp = strtold(str, NULL);
 	if (tmp < std::numeric_limits<double>::min() || tmp > std::numeric_limits<double>::max())
 	{
 		std::cerr << "DOUBLE CONVERSION IMPOSSIBLE !" << std::endl;
 		exit(EXIT_FAILURE);
 	}
-		if (tmp > std::numeric_limits<char>::max() || tmp < std::numeric_limits<char>::min())
+	if (tmp > std::numeric_limits<char>::max() || tmp < std::numeric_limits<char>::min())
 		std::cout << "char: impossible" << std::endl;
 	else if (tmp < 32 || tmp > 126)
 		std::cout << "char: Non displayable" << std::endl;
