@@ -6,7 +6,7 @@
 /*   By: genouf <genouf@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/25 17:07:01 by genouf            #+#    #+#             */
-/*   Updated: 2022/11/25 18:18:33 by genouf           ###   ########.fr       */
+/*   Updated: 2022/11/27 13:22:53 by genouf           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,19 @@ class Array
 		Array & operator=(Array const &rhs);
 		virtual ~Array();
 		
+		T & operator[](unsigned int i);
+		unsigned int	size(void) const;
+		
 	private:
 		T				*_content;
 		unsigned int	_size;
+
+	class BadRangeException : public std::exception
+	{
+		public:
+			virtual const char * what() const throw();
+	};
+	
 };
 
 #endif

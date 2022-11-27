@@ -6,17 +6,62 @@
 /*   By: genouf <genouf@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/25 17:07:04 by genouf            #+#    #+#             */
-/*   Updated: 2022/11/25 18:41:06 by genouf           ###   ########.fr       */
+/*   Updated: 2022/11/27 13:24:30 by genouf           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-// #include "Array.hpp"
-// #include "Array.tpp"
+#include "Array.hpp"
+#include "Array.tpp"
+#include <cstdlib>
 
-int	main(void)
+#define MAX_VAL 750
+int main(int, char**)
 {
-	int	*a = new int[2];
-	std::cout << a[1] << std::endl;
-	return (0);
+    Array<int> numbers(MAX_VAL);
+    int* mirror = new int[MAX_VAL];
+    srand(time(NULL));
+    for (int i = 0; i < MAX_VAL; i++)
+    {
+        const int value = rand();
+        numbers[i] = value;
+        mirror[i] = value;
+    }
+    //SCOPE
+    {
+        Array<int> tmp = numbers;
+        Array<int> test(tmp);
+    }
+
+    for (int i = 0; i < MAX_VAL; i++)
+    {
+        if (mirror[i] != numbers[i])
+        {
+            std::cerr << "didn't save the same value!!" << std::endl;
+            return 1;
+        }
+    }
+    try
+    {
+        numbers[-2] = 0;
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << '\n';
+    }
+    try
+    {
+        numbers[MAX_VAL] = 0;
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << '\n';
+    }
+
+    for (int i = 0; i < MAX_VAL; i++)
+    {
+        numbers[i] = rand();
+    }
+    delete [] mirror;//
+    return 0;
 }
