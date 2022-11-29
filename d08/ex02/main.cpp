@@ -6,7 +6,7 @@
 /*   By: genouf <genouf@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 21:36:08 by genouf            #+#    #+#             */
-/*   Updated: 2022/11/28 22:00:39 by genouf           ###   ########.fr       */
+/*   Updated: 2022/11/29 14:28:53 by genouf           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int main()
 	mstack.push(0);
 
 	MutantStack<int>::it it = mstack.begin();
-	MutantStack<int>::it ite = mstack.end();
+	MutantStack<int>::c_it ite = mstack.cend();
 
 	++it;
 	--it;

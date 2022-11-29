@@ -6,7 +6,7 @@
 /*   By: genouf <genouf@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 21:38:42 by genouf            #+#    #+#             */
-/*   Updated: 2022/11/28 21:59:58 by genouf           ###   ########.fr       */
+/*   Updated: 2022/11/29 14:30:06 by genouf           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,10 @@ template <typename T>
 class MutantStack : public std::stack<T>
 {
 	public:
-		MutantStack(void) {};
-		MutantStack(MutantStack<T> const &src) {};
-		~MutantStack() {};
-		MutantStack & operator=(MutantStack const &rhs) { return *this; };
+		MutantStack(void) { return ; };
+		MutantStack(MutantStack<T> const &src) : std::stack<T>(src) { return ; };
+		~MutantStack() { return ; };
+		MutantStack & operator=(MutantStack const &rhs) { (void)rhs; return *this; };
 		
 		typedef typename std::stack<T>::container_type::iterator it;
 		it begin()
@@ -45,21 +45,21 @@ class MutantStack : public std::stack<T>
 
 		typedef typename std::stack<T>::container_type::const_iterator c_it;
 
-		c_it cbegin()
+		c_it begin() const
 		{
-			return (this->c.cbegin());
+			return (this->c.begin());
 		}
-		c_it cend()
+		c_it cend() const
 		{
-			return (this->c.cend());
+			return (this->c.end());
 		}
-		c_it crbegin()
+		c_it crbegin() const
 		{
-			return (this->c.crbegin());
+			return (this->c.rbegin());
 		}
-		c_it crend()
+		c_it crend() const
 		{
-			return (this->c.crend());
+			return (this->c.rend());
 		}
 };
 
