@@ -6,24 +6,24 @@
 /*   By: genouf <genouf@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/27 15:02:09 by genouf            #+#    #+#             */
-/*   Updated: 2022/11/28 21:28:24 by genouf           ###   ########.fr       */
+/*   Updated: 2022/11/29 20:15:14 by genouf           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef EASYFIND_HPP
 #define EASYFIND_HPP
 
+#include <algorithm>
+
 template <typename T>
 int	easyfind(T &container, int nb)
 {
 	typename T::iterator it;
-	
-	for (it = container.begin(); it != container.end(); ++it)
-	{
-		if (*it == nb)
-			return (nb);
-	}
-	throw std::exception();
+
+	it = std::find(container.begin(), container.end(), nb);
+	if (it == container.end())
+		throw std::exception();
+	return (*it);
 }
 
 #endif
