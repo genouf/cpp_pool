@@ -6,7 +6,7 @@
 /*   By: genouf <genouf@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/27 19:11:14 by genouf            #+#    #+#             */
-/*   Updated: 2022/11/28 22:07:44 by genouf           ###   ########.fr       */
+/*   Updated: 2022/11/30 15:53:47 by genouf           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,10 +58,10 @@ int		Span::shortestSpan(void) const
 	if (v_tmp.size() < 2)
 		throw ImpossibleRangeException();
 	std::sort(v_tmp.begin(), v_tmp.end());
-	result = *(it + 1) - *it;
+	result = abs(*it - *(it + 1));
 	for (it = v_tmp.begin() + 1; it != v_tmp.end() - 2; it++)
 	{
-		tmp = *(it + 1) - *it;
+		tmp = abs(*it - *(it + 1));
 		if (tmp < result)
 			result = tmp;
 	}
@@ -76,6 +76,14 @@ int		Span::longestSpan(void) const
 		throw ImpossibleRangeException();
 	std::sort(v_tmp.begin(), v_tmp.end());
 	return (v_tmp.back() - v_tmp.front());
+}
+
+void	Span::print_span(void)
+{
+	std::vector<int>::iterator	it = this->_stock.begin();
+
+	for (this->_stock.begin(); it != this->_stock.end(); it++)
+		std::cout << *it << std::endl;
 }
 
 /*			EXCEPTIONS			*/

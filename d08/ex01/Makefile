@@ -1,4 +1,4 @@
-NAME = array
+NAME = span
 
 OBJ_PATH = obj/
 
