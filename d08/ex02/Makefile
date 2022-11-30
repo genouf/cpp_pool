@@ -1,4 +1,4 @@
-NAME = iterator
+NAME = mutant_stack
 
 OBJ_PATH = obj/
 
