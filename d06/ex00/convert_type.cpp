@@ -6,7 +6,7 @@
 /*   By: genouf <genouf@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 14:29:08 by genouf            #+#    #+#             */
-/*   Updated: 2022/11/24 17:33:40 by genouf           ###   ########.fr       */
+/*   Updated: 2022/11/30 09:49:49 by genouf           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,10 +75,7 @@ void	convert_int(char *str)
 		std::cout << "char: Non displayable" << std::endl;
 	else
 		std::cout << "char: '" << static_cast<char>(tmp) << "'" << std::endl;
-	if (tmp < std::numeric_limits<int>::min() || tmp > std::numeric_limits<int>::max())
-		std::cout << "int: impossible" << std::endl;
-	else
-		std::cout << "int: " << static_cast<int>(tmp) << std::endl;
+	std::cout << "int: " << static_cast<int>(tmp) << std::endl;
 	std::cout << "float: " << std::setprecision(1) << std::fixed << static_cast<float>(tmp) << "f" << std::endl;
 	std::cout << "double: " << std::setprecision(1) << std::fixed << static_cast<double>(tmp) << std::endl;
 }
@@ -88,8 +85,8 @@ void	convert_float(char *str)
 	double	tmp;
 	
 	hardcode_value(str);
-	tmp = strtod(str, NULL);
-	if (tmp < std::numeric_limits<float>::min() || tmp > std::numeric_limits<float>::max())
+	tmp = strtof(str, NULL);
+	if (tmp == std::numeric_limits<float>::infinity() || tmp == -std::numeric_limits<float>::infinity())
 	{
 		std::cerr << "FLOAT CONVERSION IMPOSSIBLE !" << std::endl;
 		exit(EXIT_FAILURE);
@@ -104,10 +101,7 @@ void	convert_float(char *str)
 		std::cout << "int: impossible" << std::endl;
 	else
 		std::cout << "int: " << static_cast<int>(tmp) << std::endl;
-	if (tmp < std::numeric_limits<float>::min() || tmp > std::numeric_limits<float>::max())
-		std::cout << "float: impossible" << std::endl;
-	else
-		std::cout << "float: " << std::setprecision(1) << std::fixed << static_cast<float>(tmp) << "f" << std::endl;
+	std::cout << "float: " << std::setprecision(1) << std::fixed << static_cast<float>(tmp) << "f" << std::endl;
 	std::cout << "double: " << std::setprecision(1) << std::fixed << tmp << std::endl;
 }
 
@@ -116,8 +110,8 @@ void	convert_double(char *str)
 	long double	tmp;
 
 	hardcode_value(str);
-	tmp = strtold(str, NULL);
-	if (tmp < std::numeric_limits<double>::min() || tmp > std::numeric_limits<double>::max())
+	tmp = strtod(str, NULL);
+	if (tmp == std::numeric_limits<double>::infinity() || tmp == -std::numeric_limits<double>::infinity())
 	{
 		std::cerr << "DOUBLE CONVERSION IMPOSSIBLE !" << std::endl;
 		exit(EXIT_FAILURE);
@@ -136,8 +130,5 @@ void	convert_double(char *str)
 		std::cout << "float: impossible" << std::endl;
 	else
 		std::cout << "float: " << std::setprecision(1) << std::fixed << static_cast<float>(tmp) << "f" << std::endl;
-	if (tmp < std::numeric_limits<double>::min() || tmp > std::numeric_limits<double>::max())
-		std::cout << "double: impossible" << std::endl;
-	else
-		std::cout << "double: " << std::setprecision(1) << std::fixed << static_cast<double>(tmp) << std::endl;
+	std::cout << "double: " << std::setprecision(1) << std::fixed << static_cast<double>(tmp) << std::endl;
 }
