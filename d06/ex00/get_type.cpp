@@ -6,7 +6,7 @@
 /*   By: genouf <genouf@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 09:31:44 by genouf            #+#    #+#             */
-/*   Updated: 2022/11/29 13:27:49 by genouf           ###   ########.fr       */
+/*   Updated: 2022/12/01 11:25:44 by genouf           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,8 @@ int	type_char(char *str)
 int	type_int(char *str)
 {
 	char		*end;
-	long int	tmp;
 	
-	tmp = std::strtol(str, &end, 10);
+	std::strtol(str, &end, 10);
 	if (*end != '\0')
 		return (0);
 	return (1);
@@ -44,14 +43,13 @@ int	type_int(char *str)
 int	type_float(char *str)
 {
 	char		*end;
-	double		tmp;
 	std::string	str_s(str);
 
 	if (str_s == "inf" || str_s == "inff" || str_s == "-nanf" || str_s == "-nan" || str_s == "+nanf" || str_s == "+nan")
 		return (0);
 	if (str_s == "-inff" || str_s == "+inff" || str_s == "nanf")
 		return (1);
-	tmp = strtod(str, &end);
+	strtod(str, &end);
 	if (*end != '\0' && (*end == 'f' && str[1] == '\0'))
 		return (0);
 	if (str[str_s.size() - 1] != 'f')
@@ -64,14 +62,13 @@ int	type_float(char *str)
 int	type_double(char *str)
 {
 	char			*end;
-	long double		tmp;
 	std::string	str_s(str);
 
 	if (str_s == "inf" || str_s == "inff" || str_s == "-nanf" || str_s == "-nan" || str_s == "+nanf" || str_s == "+nan")
 		return (0);
 	if (str_s == "-inf" || str_s == "+inf" || str_s == "nan")
 		return (1);
-	tmp = strtold(str, &end);
+	strtold(str, &end);
 	if (*end != '\0')
 		return (0);
 	if (str_s == "-inff" || str_s == "+inff" || str_s == "nanf")

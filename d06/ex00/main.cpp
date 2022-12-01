@@ -6,7 +6,7 @@
 /*   By: genouf <genouf@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 07:50:42 by genouf            #+#    #+#             */
-/*   Updated: 2022/11/24 17:16:55 by genouf           ###   ########.fr       */
+/*   Updated: 2022/12/01 11:27:06 by genouf           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ int	main(int argc, char **argv)
 		std::cout << "Wrong number of arguments !" << std::endl;
 		return (1);
 	}
+	if (argv[1][0] == '-' && argv[1][1] == '-')
+		return (0);
 	if (type_char(argv[1]))
 		convert_char(argv[1]);
 	else if(type_int(argv[1]))
